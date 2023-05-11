@@ -1,0 +1,58 @@
+.container{
+    display: flex;
+    border-radius: 0.5rem;
+    gap:20px
+}
+
+.lists_container{
+    display: flex;
+    gap: 20px;
+}
+.list_cards{
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    padding:0 2rem;
+}
+.list_heading{
+    background-color: #eee;
+    font-size: .7rem;
+    padding: .4rem 2.6rem;
+    
+}
+.inputForm{
+    display: flex;
+    flex-direction: column;
+}
+.inputForm input{
+    padding: .5rem;
+    border: none;
+    outline: none;
+    margin-bottom: .4rem;
+}
+.inputForm button{
+    border: none;
+    outline: none;
+    background-color: rgb(34, 80, 196);
+    color: #fff;
+    font-weight: 500;
+    padding: .5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width:90px
+}
+.inputForm textarea{
+    border:none; 
+    margin: .6rem;
+    width: 200px;
+    border:1px solid rgb(41, 143, 226);
+}
+.card p{
+    background-color:#fff;
+    padding: .3rem;
+    border-radius: .4rem;
+    box-shadow: 0px 1px 9px black;
+    text-align: center;
+    margin: .4rem;
+    text-align: left;
+}

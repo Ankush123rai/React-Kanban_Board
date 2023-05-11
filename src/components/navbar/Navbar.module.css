@@ -1,0 +1,19 @@
+.navbar{
+    overflow: hidden;
+    position:fixed; 
+    background-color: black;
+    top: 0; 
+    padding: 1rem;
+    width: 100%;   
+    z-index: 9999;
+    box-shadow: 1px 0px 15px black;
+}
+.navbar{
+    background-color: rgb(245, 218, 218); 
+    background-color: rgba(234, 231, 231, 0.5);
+}
+.navbar h2{
+    font-size: 2rem;
+    color:rgb(55, 53, 53);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
