@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import style from "./MainCard.module.css";
+import { Link } from 'react-router-dom'
 
 function MainCard() {
   const [lists, setLists] = useState([]);
@@ -80,6 +81,7 @@ function MainCard() {
                     className={style.list_heading}
                     {...provided.dragHandleProps}
                   >
+                    
                     <h2>{list.title}</h2>
                   </div>
                   <div className={style.list_cards}>
@@ -88,6 +90,7 @@ function MainCard() {
                         key={index}
                         draggableId={`${index}_${list.title}`}
                         index={index}
+                        
                       >
                         {(provided) => (
                           <div
@@ -96,7 +99,8 @@ function MainCard() {
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
-                            <p>{card.title}</p>
+                            
+                            <Link to='description'>  <p  >{card.title}</p></Link>
                           </div>
                         )}
                       </Draggable>
@@ -109,6 +113,7 @@ function MainCard() {
                         type="text"
                         name="title"
                         placeholder="Enter card title..."
+                        
                       />
                       <button type="submit">Add Card</button>
                     </form>
