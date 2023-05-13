@@ -42,7 +42,7 @@ const date = new Date();
   return (
     <div className="main-container-wrap">
       <form className="compose-form" onSubmit={handleSubmit}>
-        <div className="compose-form-container" style={{display:'flex' ,gap:'.5rem', margin:'.5rem'}}>
+        <div className="compose-form-container" style={{display:'flex' ,gap:'.5rem',      }}>
         <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
           <input
             value={editorValue}

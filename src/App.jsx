@@ -7,12 +7,15 @@ import Description from './components/description/Description'
 const App = () => {
   return (
     <div>
-       
+      <Routes>
+        <Route path='/description' element={<Description/>}/>
+        </Routes>
+        <div>
+       {/* <Navbar/> */}
         <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/description' element={<Description/>}/>
-        
       </Routes>
+      </div>
     </div>
   )
 }
