@@ -1,3 +1,4 @@
+import { TextField, TextareaAutosize,Button } from '@mui/material';
 import React, { useState } from 'react';
 
 
@@ -10,13 +11,13 @@ export default function DescriptionText() {
   return (
     <div className="App" >
       {editing ? (<>
-              <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                
-                autoFocus
-              /><button onClick={() => setEditing(false)}>submit</button></>
+               <TextField
+               type="text"
+               value={title}
+               onChange={(e) => setTitle(e.target.value)}
+               sx={{width:'100%'}}
+               autoFocus/> 
+              <Button size ="small" variant='contained' sx={{marginTop:.5}} onClick={() => setEditing(false)}>submit</Button></>
             ) : (
               <h3 onClick={() => setEditing(true)}>{title}</h3>
             )}

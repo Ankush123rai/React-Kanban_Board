@@ -3,6 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import { deepOrange} from '@mui/material/colors';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
+import { TextField } from "@mui/material";
 
 function Activity() {
   const [editorValue, setEditorValue] = useState("");
@@ -42,9 +43,10 @@ const date = new Date();
   return (
     <div className="main-container-wrap">
       <form className="compose-form" onSubmit={handleSubmit}>
-        <div className="compose-form-container" style={{display:'flex' ,gap:'.5rem',      }}>
+        <div  style={{display:'flex' ,gap:'.5rem',      }}>
         <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
-          <input
+          <TextField
+           size='small'
             value={editorValue}
             onKeyPress={handleKeypress}
             onChange={handleEditorValueChange}
