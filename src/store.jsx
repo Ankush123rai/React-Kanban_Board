@@ -1,10 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit'
-import CardReducer from './components/features/CardSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import listReducer from "./components/features/listSlice";
 
- const store = configureStore({
+const store= configureStore({
   reducer: {
-    CardList: CardReducer
-  },
-})
+    lists: listReducer
+  }
+});
 
-export default store
+export default store;
+
+

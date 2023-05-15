@@ -1,85 +1,70 @@
 import React, { useState } from "react";
 import style from "./MainCard.module.css";
-import InputCard from "../inputCard/InputCard";
+
+
 
 import { useDispatch, useSelector } from "react-redux";
-import { add } from "../features/CardSlice";
-import AddList from "../../atoms/AddList";
+import { addList, deleteList, addCard } from '../features/listSlice';
 import { v4 as uuidv4 } from "uuid";
-// import {Menu} from '@mui/material/Menu';
-// import {MenuItem} from '@mui/material/MenuItem'
+import InputCard from "../inputCard/InputCard";
+import AddList from "../../atoms/AddList";
+
 
 function MainCard() {
   const dispatch = useDispatch();
-  const reduxData = useSelector((state) => state.CardList);
-  console.log(reduxData.cards);
-
+  const reduxData = useSelector((state) => state.lists);
+  // console.log(reduxData);
+ 
   const [toggle, setToggle] = useState(false);
 
   const handleAddList = (event) => {
     event.preventDefault();
     const title = event.target.title.value;
     const id = uuidv4();
-    dispatch(add({id, title: title, cards: [] }));
-    event.target.reset();
+    if (title !== "") {
+      dispatch(addList({ title, id }));
+      event.target.title.value = "";
+    }
+    else{
+      setToggle(!toggle)
+    }
 
   };
   return (
     <div className={style.container}>
+
       <div className={style.lists_container}>
-        {reduxData.map((list, index) => (
-          <div className={style.list} key={index}>
-            <div className={style.list_heading}>
+        {reduxData.map((list) => (
+          <div className={style.list_container} key={list.id}>
+            <div className={style.list_title}>
               <h3>{list.title}</h3>
-            
+              <button
+                className={style.delete_button}
+                onClick={() => dispatch(deleteList(list.id))}
+              >
+                X
+              </button>
+              </div>
+             
 
-      {/* <p onClick="">
-        Dashboard
-      </p>
-      <Menu
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-      >
-        <MenuItem >Achieve</MenuItem> 
-      </Menu> */}
-    
+           </div>
 
-            </div>
-            <div className={style.list_cards}>
-              {list.cards.map((card, index) => (
-                <div className={style.card} key={card.id}>
-                  <p>{card.title}</p>
-                </div>
-              ))}
-
-              <InputCard/>
-              
-            </div>
-          </div>
         ))}
       </div>
-        
-        { toggle ?
-      <form className={style.inputForm} onSubmit={handleAddList}>
+     
+      <InputCard/>
+       
+      
+     {toggle ? 
+      <form className={style.addForm} onSubmit={handleAddList}>
         <input type="text" name="title" placeholder="Enter list title..." />
         <button className={style.add_button} type="submit">
           Add List
         </button>
       </form>:
-
-      <AddList setToggle={setToggle}  toggle={toggle}/>
-        }
+      <AddList toggle={toggle} setToggle={setToggle}/>
+     }
+        
     </div>
   );
 }

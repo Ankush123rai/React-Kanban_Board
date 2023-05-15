@@ -6,7 +6,6 @@
     padding: 1rem;
     width: 100%;   
     z-index: 9999;
-    box-shadow: 1px 0px 15px black;
 }
 .navbar{
     background-color: rgb(245, 218, 218); 
