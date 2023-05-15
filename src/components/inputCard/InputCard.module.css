@@ -3,13 +3,16 @@
 .inputForm{
     display: flex;
     flex-direction: column;
-    padding-bottom: 1rem;
+    background-color: #eee;
+    padding-top: .5rem;
 }
 .inputForm input{
-    padding: .5rem;
+    padding: 1rem ;
     border: none;
     outline: none;
     margin-bottom: .4rem;
+    margin:0 1rem;
+    border-radius: .4rem;
 }
 .inputForm button{
     border: none;
@@ -20,18 +23,10 @@
     padding: .5rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    width:90px
+    width:90px;
+    margin: 0 1rem;
 }
 
-.card p{
-    background-color:#fff;
-    padding: .3rem;
-    border-radius: .4rem;
-    box-shadow: 0px 1px 4px black;
-    text-align: center;
-    margin: .4rem;
-    text-align: left;
-}
 .main_container{
     display: flex;
     justify-content: center;
@@ -43,18 +38,5 @@
     margin-bottom: 2rem;
 }
 
-.card_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* width: 100%; */
-    padding: 0 1rem;
-    box-sizing: border-box;
-    background-color: #eee;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    margin-bottom: 2rem;
-    min-width: 200px;
-}
+
 

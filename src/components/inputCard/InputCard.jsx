@@ -1,51 +1,63 @@
 import React,{useState} from 'react'
-import style from '../inputCard/InputCard.module.css' 
-import { useDispatch, useSelector} from 'react-redux'
-import { addCard } from '../features/listSlice'
-import { v4 as uuidv4 } from 'uuid';
-import AddList from '../../atoms/AddList';
+import style from './InputCard.module.css'
+import { useDispatch} from "react-redux";
+import { addList, addCard } from '../features/listSlice';
+import { v4 as uuid } from 'uuid';
+import AddList from '../../atoms/AddList'
 
-const InputCard = ({listId}) => {
-    const [toggle, setToggle] = useState(false)
-    const dispatch = useDispatch()
-    const reduxData = useSelector((state) => state.lists)
-    console.log(reduxData,listId)
 
-    const handleAddCard = (event) => {
-        event.preventDefault()
-        const title = event.target.title.value
-        const id = uuidv4()
-       if(title!==''){
-        dispatch(addCard({listId, title, id}))
-        event.target.title.value = ""
-       }
-         else{
-              setToggle(!toggle)
-            }
+const InputCard = ({type,listId}) => {
+  const [title, setTitle] = useState('');
+  const [toggle, setToogle]=useState(false)
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(title==""){
+      setToogle(!toggle)
     }
+    const id2 = uuid();
+    if(type){
+        dispatch(addCard({ title:title, listId: listId}))
+        }else
+    if(title){
+        dispatch(addList({id2, title:title}))
+        }
+        setTitle('')
+  }
 
   return (
-    <div>
-        {reduxData.map((list) => (
-            <div className={style.card_container} key={list.id}>
-                {list.cards.map((card) => (
-                    <div className={style.card} key={card.id}>
-                        <p>{card.title}</p>
-                        </div>
-                ))}
-                {toggle ? 
-                    <form className={style.inputForm} onSubmit={handleAddCard}>
-                        <input type="text" name="title" placeholder="Enter list title..." />
-                        <button className={style.add_button} type="submit">
-                        Add Card
-                        </button>
-                    </form>:
-                    <AddList toggle={toggle} setToggle={setToggle}/>
-                    }
-                </div>
-        ))}
-
-
+    
+    <div className={style.container}>
+    {toggle ?
+      <form onSubmit={handleSubmit}>
+      
+      <div className={style.inputForm}>
+      {type === 'card' ? 
+          <input 
+            type="text" 
+            placeholder="Enter list title..." 
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            />:
+          <input
+            type="text"
+            placeholder="Enter a title for this card..."
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+      }
+      </div>
+      
+      <div className={style.inputForm}>
+        <button 
+          type="submit">
+          {type=="card" ?"Add Card": 'Add List'}
+        </button>
+      </div>
+      </form>:
+      <AddList setToggle={setToogle} toggle={toggle}/>
+    }
     </div>
   )
 }

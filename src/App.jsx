@@ -1,17 +1,17 @@
-import React from 'react'
-import Home from './home/Home'
-import Navbar from './components/navbar/Navbar'
-import { useSelector } from 'react-redux'
+import React from "react";
+import Home from "./home/Home";
+import Description from "./components/description/Description";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
-  // const reduxState= useSelector(state=>state)
-  // console.log(reduxState);
   return (
-    <div>
-        <Navbar/>
-        <Home/>
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/task/:id/" element={<Description />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
