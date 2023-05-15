@@ -9,6 +9,7 @@ const Home = () => {
       <Navbar/>
        <div className={style.home_body}>
           <MainCard/>
+         
        </div>
     </div>
   )

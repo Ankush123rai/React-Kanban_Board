@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import style from "./MainCard.module.css";
 import { Link } from 'react-router-dom'
 
-function MainCard() {
+function MainCard(props) {
   const [lists, setLists] = useState([]);
-
+   
+   
   const onDragEnd = (result) => {
     if (!result.destination) {
       return;
-    }
+    }   
     const sourceListIndex = result.source.droppableId;
     const destinationListIndex = result.destination.droppableId;
     const sourceList = lists[sourceListIndex];
@@ -44,8 +45,10 @@ function MainCard() {
     const title = event.target.elements.title.value;
     setLists([...lists, { title, cards: [] }]);
     event.target.reset();
+   
   };
-
+     
+ 
   const addCard = (event, index) => {
     event.preventDefault();
     const title = event.target.elements.title.value;
@@ -53,7 +56,11 @@ function MainCard() {
     newLists[index].cards.push({ title });
     setLists(newLists);
     event.target.reset();
+   tag=title
+   
+  
   };
+  
 
   const onListDragEnd = (result) => {
     if (!result.destination) {
@@ -68,23 +75,24 @@ function MainCard() {
   return (
     <div className={style.container}>
       <DragDropContext onDragEnd={onDragEnd}>
-        <div className={style.lists_container}>
+        <div className={style.lists_container} >
           {lists.map((list, index) => (
             <Droppable droppableId={index.toString()} key={index}>
               {(provided, snapshot) => (
-                <div
+                <div 
                   className={style.list}
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
-                  <div
-                    className={style.list_heading}
+                  <div 
+                    
                     {...provided.dragHandleProps}
                   >
                     
-                    <h2>{list.title}</h2>
+
                   </div>
-                  <div className={style.list_cards}>
+                  <div className={style.list_cards} style={{backgroundColor:'white',borderRadius:'1rem'}}>
+                  <h2>{list.title}</h2>
                     {list.cards.map((card, index) => (
                       <Draggable
                         key={index}
@@ -93,23 +101,24 @@ function MainCard() {
                         
                       >
                         {(provided) => (
-                          <div
+                          <div 
                             className={style.card}
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
+                          
+                            <Link style={{color: "inherit",textDecoration:'none'}} to={`description/:${card.title}`}> <p  >{card.title}</p></Link>
                             
-                            <Link to='description'>  <p  >{card.title}</p></Link>
                           </div>
                         )}
                       </Draggable>
                     ))}
-                    <form
-                      className={style.inputForm}
-                      onSubmit={(event) => addCard(event, index)}
+                    <form 
+                      className={style.inputForm}   
+                      onSubmit={(event) => addCard(event, index) }
                     >
-                      <textarea
+                      <textarea 
                         type="text"
                         name="title"
                         placeholder="Enter card title..."
@@ -131,7 +140,9 @@ function MainCard() {
           Add List
         </button>
       </form>
+      
     </div>
+    
   );
 }
 export default MainCard

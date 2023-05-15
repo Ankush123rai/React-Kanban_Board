@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route path='/description' element={<Description/>}/>
+        <Route path='/description/:UserId' element={<Description/>}/>
         </Routes>
         <div>
        {/* <Navbar/> */}

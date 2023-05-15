@@ -16,9 +16,10 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function Description(){
-  const [title, setTitle] = useState("List Name ");
+export default function Description(props){
+  const [title, setTitle] = useState("task name");
   const [editing, setEditing] = useState(false);
+
   return(<>
       <Box
       sx={{
