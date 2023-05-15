@@ -1,0 +1,9 @@
+ body{
+  background-color: gray;
+ }
+.main{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin: 1rem;
+}

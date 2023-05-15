@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {deleteList } from '../features/listSlice';
 import InputCard from "../inputCard/InputCard";
 import Card from '../../atoms/card/card';
+import { Link } from 'react-router-dom'
 
 
 
@@ -34,7 +35,7 @@ function MainCard() {
              {list.task &&
                     list.task.map((task) => (
                       <div key={task.id} className={style.card}>
-                        <Card title={task.title}/>
+                      <Link style={{color: "inherit",textDecoration:'none'}} to={`description/:${task.title}`}><Card title={task.title}/></Link>  
                         {/* <p>{task.title}</p> */}
                         
                       </div>
