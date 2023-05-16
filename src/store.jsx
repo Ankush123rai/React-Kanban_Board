@@ -3,21 +3,24 @@ import listReducer from "./components/features/listSlice";
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 import { combineReducers } from '@reduxjs/toolkit';
+import { persistStore } from 'redux-persist';
 
-const persistConfig={
+const persistConfig = {
   key: "root",
-  version:1,
-  storage
-}
-const reducer=combineReducers({
-  lists: listReducer
-})
-const persistedReducer=persistReducer(persistConfig, reducer)
+  version: 1,
+  storage,
+};
 
-const store= configureStore({
+const rootReducer = combineReducers({
+  lists: listReducer
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = configureStore({
   reducer: persistedReducer
 });
 
-export default store;
+const persistor = persistStore(store);
 
-
+export { store, persistor };
