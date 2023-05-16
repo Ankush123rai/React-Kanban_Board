@@ -6,6 +6,8 @@
     padding: 1rem;
     width: 100%;   
     z-index: 9999;
+    display: flex;
+    justify-content: space-between;
 }
 .navbar{
     background-color: rgb(245, 218, 218); 
@@ -15,4 +17,59 @@
     font-size: 2rem;
     color:rgb(55, 53, 53);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbarLeft{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.navbarImg{
+    height: 8vh;
+    width: 9vh;
+    border-radius: 4rem;
+}
+.navbarRight{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+.navbarBtn{
+    padding: 0.4rem;
+    background-color: azure;
+    border: none;
+    border-radius: 4px;
+    width: 5rem;
+}
+.navbarSearch{
+    padding: 0.3rem;
+    background-color: azure;
+    border: none;
+    border-radius: 4px;
+    width: 5rem;
+}
+.userImage{
+    border-radius: 2rem;
+}
+.Icon{
+    font-size: 1.5rem;
+
+}
+.Icon1{
+    font-size: 1.5rem;
+}
+.navbarItem:hover{
+background-color: rgb(215, 230, 255);
+}
+.navbarItem{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.navbarSearch:hover{
+    background-color: rgb(215, 230, 255);
+}
+.navbarBtn:hover{
+    background-color: rgb(215, 230, 255);
 }
