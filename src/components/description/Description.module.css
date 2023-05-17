@@ -1,6 +1,7 @@
  body{
-  background-color: gray;
- }
+  background-color:#828282;
+  background-size: 100vw;
+}
 .main{
   display: flex;
   flex-direction: column;

@@ -11,9 +11,10 @@ import { Link } from 'react-router-dom'
 function MainCard() {
   const dispatch = useDispatch();
   const reduxData = useSelector((state) => state.lists.lists);
-  console.log(reduxData);
- 
 
+  
+ 
+      console.log(reduxData)
 
   
   return (
@@ -35,9 +36,9 @@ function MainCard() {
              {list.task &&
                     list.task.map((task) => (
                       <div key={task.id} className={style.card}>
-                      <Link style={{color: "inherit",textDecoration:'none'}} to={`description/:${task.title}`}><Card title={task.title}/></Link>  
+                     <Card title={task.title}/> 
                         {/* <p>{task.title}</p> */}
-                        
+
                       </div>
                     ))}
              </div>

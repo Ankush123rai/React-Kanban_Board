@@ -27,6 +27,8 @@ const listSlice = createSlice({
                     item.task.push(action.payload)
                 }
             }
+
+            
         })
     }
      

@@ -8,9 +8,10 @@ import AddList from '../../atoms/AddList'
 
 const InputCard = ({type,listId}) => {
   const [title, setTitle] = useState('');
-  const [toggle, setToogle]=useState(false)
+  const [toggle, setToogle]=useState(true)
   const dispatch = useDispatch();
-
+    
+    
   const handleSubmit = (e) => {
     e.preventDefault();
     if(title==""){

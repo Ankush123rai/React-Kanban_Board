@@ -16,9 +16,16 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function Description(props){
-  const [title, setTitle] = useState("task name");
+
+
+export default function Description(){
+  const [title, setTitle] = useState(window.tag);
   const [editing, setEditing] = useState(false);
+ 
+   
+    
+      
+
 
   return(<>
       <Box
@@ -28,9 +35,9 @@ export default function Description(props){
         '& > :not(style)': {
           m: 6,
           width:550,
-          height:550,
-          backgroundColor:"aliceblue",
-          marginLeft:"25rem",
+          
+          backgroundColor:"#D9DDDC",
+          marginLeft:"24rem",
           borderRadius:'1rem'
         },
       }}
