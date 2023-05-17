@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import style from './InputCard.module.css'
 import { useDispatch} from "react-redux";
 import { addList, addCard } from '../features/listSlice';
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from 'uuid';'  '
 import AddList from '../../atoms/AddList'
 
 
@@ -29,7 +29,7 @@ const InputCard = ({type,listId}) => {
   return (
     
     <div className={style.container}>
-    {toggle ?
+    
       <form onSubmit={handleSubmit}>
       
       <div className={style.inputForm}>
@@ -40,6 +40,7 @@ const InputCard = ({type,listId}) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             />:
+            
           <input
             type="text"
             placeholder="Enter a title for this card..."
@@ -47,17 +48,13 @@ const InputCard = ({type,listId}) => {
             onChange={(e) => setTitle(e.target.value)}
           />
       }
-      </div>
-      
-      <div className={style.inputForm}>
         <button 
           type="submit">
           {type=="card" ?"Add Card": 'Add List'}
         </button>
       </div>
-      </form>:
-      <AddList setToggle={setToogle} toggle={toggle}/>
-    }
+      </form>
+     
     </div>
   )
 }

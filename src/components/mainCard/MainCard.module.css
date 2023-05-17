@@ -3,8 +3,12 @@
     border-radius: 0.5rem;
     gap:20px;
     padding-top: 8rem;
+    padding-left:2rem ;
+    overflow: scroll;
 }
-
+.container::-webkit-scrollbar{
+    display: none;
+}
 .lists_container{
     display: flex;
     gap: 20px;

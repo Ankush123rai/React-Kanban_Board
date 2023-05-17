@@ -5,6 +5,8 @@
     flex-direction: column;
     background-color: #eee;
     padding-top: .5rem;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
 }
 .inputForm input{
     padding: 1rem ;
@@ -24,7 +26,7 @@
     border-radius: 0.5rem;
     cursor: pointer;
     width:90px;
-    margin: 0 1rem;
+    margin: .5rem 1rem;
 }
 
 .main_container{
