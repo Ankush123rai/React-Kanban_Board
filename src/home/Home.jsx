@@ -9,9 +9,6 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import EditIcon from '@mui/icons-material/Edit';
 
-
-
-
 const Home = () => {
   const imageUrl="https://img.freepik.com/free-vector/modern-stylish-hexagonal-background-wallpaper_78370-720.jpg"
 
