@@ -1,0 +1,14 @@
+a{
+    text-decoration: none;
+}
+
+.dailogBox{
+   position: fixed;
+   top: 30%;
+   left: 50%;
+   background-color: #eee;
+   transform: translate(-50% );
+   width: 50vw;
+   padding: 3rem;
+   
+}

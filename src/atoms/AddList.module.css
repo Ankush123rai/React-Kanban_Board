@@ -1,0 +1,23 @@
+.add_list{
+    border: 1px solid gray;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 1s ease;
+    margin-top: 0.5rem;
+    background-color:#fff;
+    margin-bottom: 1rem;
+}
+.add_list:hover{
+    background-color: #185c98;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.add_list svg{
+    color: #000;
+    font-size: 1rem;
+}
