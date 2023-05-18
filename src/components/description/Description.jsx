@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function Description(){
-  const [title, setTitle] = useState(title);
+  const [title, setTitle] = useState(window.t);
   const [editing, setEditing] = useState(false);
     
   
