@@ -15,6 +15,16 @@ const listSlice = createSlice({
     deleteList: (state, action) => {
       state.lists = state.lists.filter((item) => item.id !== action.payload);
     },
+
+    editList: (state, action) => {
+      const { id, title } = action.payload;
+      const list = state.lists.find((item) => item.id === id);
+      if (list) {
+        list.title = title;
+      }
+    },
+
+
     addCard: (state, action) => {
       const { listId, title } = action.payload;
       const list = state.lists.find((item) => item.id === listId);
@@ -25,6 +35,24 @@ const listSlice = createSlice({
         list.task.push({ id: uuid(), title });
       }
     },
+    deleteCard: (state, action) => {
+      const { listId, cardId } = action.payload;
+      const list = state.lists.find((item) => item.id === listId);
+      if (list) {
+        list.task = list.task.filter((item) => item.id !== cardId);
+      }
+    },
+    editCard: (state, action) => {
+      const { listId, cardId, title } = action.payload;
+      const list = state.lists.find((item) => item.id === listId);
+      if (list) {
+        const card = list.task.find((item) => item.id === cardId);
+        if (card) {
+          card.title = title;
+        }
+      } 
+    },
+    
     reorderLists: (state, action) => {
       const { startIndex, endIndex } = action.payload;
       const [removed] = state.lists.splice(startIndex, 1);
@@ -63,6 +91,9 @@ export const {
   reorderLists,
   reorderCards,
   moveCardAcrossLists,
+  deleteCard,
+  editCard,
+  editList,
 } = listSlice.actions;
 
 export default listSlice.reducer;

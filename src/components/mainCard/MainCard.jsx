@@ -1,16 +1,21 @@
-import React from "react";
+import React from "react"
 import { useDispatch, useSelector } from "react-redux";
+import {v4 as uuid} from "uuid"
 import {
   deleteList,
   reorderLists,
   reorderCards,
   moveCardAcrossLists,
+  editList,
+  addCard,
+  deleteCard,
 } from "../features/listSlice";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import style from "./MainCard.module.css";
 import InputCard from "../inputCard/InputCard";
 import Card from "../../atoms/card/card";
 import { Link } from "react-router-dom";
+import { MdDelete, MdEdit } from "react-icons/md";
 
 function MainCard() {
   const dispatch = useDispatch();
@@ -50,6 +55,13 @@ function MainCard() {
     }
   };
 
+  const handleEditList=(id)=>{
+    const newTitle=prompt("Enter new title");
+    if(newTitle !== ""){
+      dispatch(editList({id,title:newTitle}))
+    }
+  }
+
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <div className={style.container}>
@@ -68,15 +80,18 @@ function MainCard() {
                       {...provided.draggableProps}
                       ref={provided.innerRef}
                     >
-                      <div className={style.list_title}>
-                        <h3 {...provided.dragHandleProps}>{list.title}</h3>
-                        <button
+                      <div className={style.list_title}  {...provided.dragHandleProps}>
+                        <h3
+                          onClick={()=>handleEditList(list.id)}
+                        >{list.title}</h3>
+
+                        <MdDelete
                           className={style.delete_button}
                           onClick={() => dispatch(deleteList(list.id))}
-                        >
-                          X
-                        </button>
+                        />
+                        
                       </div>
+
                       <Droppable droppableId={list.id} type="card">
                         {(provided) => (
                           <div
@@ -103,10 +118,19 @@ function MainCard() {
                                           color: "inherit",
                                           textDecoration: "none",
                                         }}
-                                        to={`description/:${task.title}`}
+                                        to={`/description/${task.id}`} key={task.id}
                                       >
-                                        <Card title={task.title} />
+                                       <p>
+                                        {task.title}
+                                    
+                                       </p>
+                              
                                       </Link>
+                                      <div>
+                                      <MdDelete onClick={() => dispatch(deleteCard({listId:list.id,cardId:task.id}))} 
+                                        className={style.delete_button}
+                                      />
+                                      </div>
                                     </div>
                                   )}
                                 </Draggable>
