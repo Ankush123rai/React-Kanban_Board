@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import style from './InputCard.module.css'
 import { useDispatch} from "react-redux";
 import { addList, addCard } from '../features/listSlice';
-import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from 'uuid';
 
 
 const InputCard = ({type,listId}) => {
@@ -34,7 +34,7 @@ const InputCard = ({type,listId}) => {
   };
   const handleToggle=()=>{
     setToggle(!toggle)
-    isFormVisible(false)
+    
   }
 
   return (
