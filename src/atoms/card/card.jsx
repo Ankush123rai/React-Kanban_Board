@@ -29,6 +29,7 @@ const Card=({ title })=>{
     handleNavigate(title);
     handleOpen();
     window.tag=title
+    window.t=title
   };
 
   return (
@@ -46,7 +47,7 @@ const Card=({ title })=>{
       >
         <Box className={style.dailogBox}>
           
-         <Description/>
+         <Description var card={title}/>
         </Box>
       </Modal>
     </>

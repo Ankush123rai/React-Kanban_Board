@@ -19,11 +19,11 @@ import { Link } from 'react-router-dom';
 
 
 export default function Description(){
-  const [title, setTitle] = useState(window.tag);
+  const [title, setTitle] = useState(title);
   const [editing, setEditing] = useState(false);
- 
-  
     
+  
+ 
   
 
   return(<>

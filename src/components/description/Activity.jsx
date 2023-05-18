@@ -1,74 +1,108 @@
 import { useState } from "react";
-import Avatar from '@mui/material/Avatar';
-import { deepOrange} from '@mui/material/colors';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
+import Avatar from "@mui/material/Avatar";
+import { deepOrange } from "@mui/material/colors";
+import Typography from "@mui/material/Typography";
 import { TextField } from "@mui/material";
-import { v4 as uuid } from 'uuid';
-
+import { v4 as uuid } from "uuid";
+import { getUsers } from "./localStorage";
 
 function Activity() {
   const [editorValue, setEditorValue] = useState("");
-  const [activity, setActivity] = useState([  ]);
- 
-
-
+  
+  const storedData = localStorage.getItem("users");
+  var k=[]
+  k=storedData ? JSON.parse(storedData) : []
+  console.log ();
+  var [activity, setActivity] = useState(k);
   const handleEditorValueChange = (e) => {
     setEditorValue(e.target.value);
   };
-  
-
+   const name=window.tag 
   const handleSubmit = (e) => {
     e.preventDefault();
-     setActivity([ { id: uuid(), task:editorValue, time:showTime } ,...activity]);
+    setActivity([
+      { id: uuid(), task: editorValue, time: showTime, cardName:name},
+      ...activity
+    ]);
+   var tag= { id: uuid(), task: editorValue, time: showTime, cardName:name }
+    setEditorValue(editorValue);
+    setTime(time);
+   const users = getUsers();
+    users.push(tag);
+    localStorage.setItem("users", JSON.stringify(users));
    
-    setEditorValue(editorValue  );
-    setTime(time)
+ 
+  };
+ 
+  console.log(k);
+
+  const handleKeypress = (e) => {
+    if (e.keyCode === 13) {
+      handleSubmit();
+    }
   };
 
- 
-  const handleKeypress = e => {
-    
-  if (e.keyCode === 13) {
-    handleSubmit();
-  }
-};
-const date = new Date();
-    const showTime = date.getHours() 
-        + ':' + date.getMinutes() 
-        + ":" + date.getSeconds()
-        +" "+ date.getDate()
-        +"/"+ date.getMonth()
-        +"/"+ date.getFullYear()
-         const [time ,setTime]=useState(showTime)
+  const date = new Date();
+
+  const showTime =
+    date.toLocaleString("default", { month: "long" }) +
+    " " +
+    date.getDate() +
+    " at " +
+    date.getHours() +
+    ":" +
+    date.getMinutes();
+
+  const [time, setTime] = useState(showTime);
 
   return (
     <div className="main-container-wrap">
       <form className="compose-form" onSubmit={handleSubmit}>
-        <div  style={{display:'flex' ,gap:'.5rem',      }}>
-        <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
+        <div style={{ display: "flex", gap: ".5rem" }}>
+          <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
           <TextField
-           size='small'
+            size="small"
             value={editorValue}
             onKeyPress={handleKeypress}
             onChange={handleEditorValueChange}
             className="compose-form-textarea"
             placeholder="  Write a comment "
+            style={{
+              display: "flex",
+              backgroundColor: "white",
+              borderRadius: ".5rem",
+              width: "100vw"
+            }}
           />
         </div>
-        
       </form>
 
-      <div className="tweet-container" style={{marginLeft:"-.4rem",marginTop:'1rem'}}>
-        {activity.map((curElm,index) => (
-          <div  key={index} className="tweet">
-            <Typography variant="h6" component="h2"
-            style={{display:'flex' ,gap:'1rem' ,margin:'.5rem'}}> 
-           <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
-           kamal panwar  {curElm.time}</Typography> 
-           <Typography style={{display:'flex' ,marginLeft:"3.5rem"}}> {curElm.task}
-           </Typography>
-           
+      <div
+        className="tweet-container"
+        style={{ marginLeft: "-.4rem", marginTop: "1rem" }}
+      >
+        {activity.map((curElm, index) => (
+          <div key={index} className="tweet">
+            <Typography
+              variant="h6"
+              component="h2"
+              style={{ display: "flex", gap: "1rem", margin: ".5rem" }}
+            >
+              <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
+              kamal panwar - {curElm.time}
+            </Typography>
+            <Typography
+              style={{
+                display: "flex",
+                marginLeft: "4rem",
+                backgroundColor: "white",
+                borderRadius: ".5rem",
+                padding: ".5rem"
+              }}
+            >
+              {" "}
+              {curElm.task}
+            </Typography>
           </div>
         ))}
       </div>
