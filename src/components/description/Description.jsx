@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import DescriptionIcon from '@mui/icons-material/Description';
 import ListIcon from '@mui/icons-material/List';
 import Typography from '@mui/material/Typography';
-import styles from './description.module.css'
+import styles from './Description.module.css'
 import Activity from './Activity';
 import { useState } from "react"
 import DescriptionText from './DescriptionText';
