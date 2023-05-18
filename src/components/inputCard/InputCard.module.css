@@ -10,7 +10,7 @@
 }
 .inputForm input{
     padding: 1rem ;
-    border: none;
+    border:2px solid rgb(34, 80, 196);
     outline: none;
     margin-bottom: .4rem;
     margin:0 1rem;
@@ -40,5 +40,44 @@
     margin-bottom: 2rem;
 }
 
+.errorForm{
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    padding-top: .5rem;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+.errorForm input{
+    padding: 1rem ;
+    border: 2px solid  rgb(34, 80, 196);
+    outline: none;
+    margin-bottom: .4rem;
+    margin:0 1rem;
+    border-radius: .4rem;
+}
+.errorForm input::placeholder{
+    color:red
+}
+.errorForm button{
+    border: none;
+    outline: none;
+    background-color: rgb(34, 80, 196);
+    color: #fff;
+    font-weight: 500;
+    padding: .5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width:90px;
+    margin: .5rem 1rem;
+}
 
+.initial_btn{
+    border:none;
+    padding: .6rem 1.5rem;
+    width: 100%;
+    border-radius: .2rem;
+    text-align: left;
+
+}
 
