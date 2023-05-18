@@ -1,7 +1,5 @@
 import { TextField, TextareaAutosize,Button } from '@mui/material';
 import React, { useState } from 'react';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 import { getdes } from './storage';
 import { v4 as uuid } from "uuid";
 
@@ -30,12 +28,16 @@ export default function DescriptionText() {
 
   return (
     <div className="App"  >
-    {editing ? (<> <div style={{backgroundColor:"white"}}>
-      <ReactQuill theme="snow" value={title} onChange={setTitle} /></div>
-            <Button size ="small" variant='contained' sx={{marginTop:.5}} onClick={handleSubmit}>submit</Button></>
-          ) : ( <div  onClick={() => setEditing(true)} dangerouslySetInnerHTML={{ __html: title, }}>
-            </div>
-          )}
+    {editing ? (<> <TextField
+               type="text"
+               value={title}
+               onChange={(e) => setTitle(e.target.value)}
+               sx={{width:'100%'}}
+               autoFocus/> 
+              <Button size ="small" variant='contained' sx={{marginTop:.5}} onClick={handleSubmit}>submit</Button></>
+            ) : (
+              <h3 onClick={() => setEditing(true)}>{title}</h3>
+            )}
   </div>
   );    
 }
