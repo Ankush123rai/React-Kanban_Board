@@ -113,19 +113,12 @@ function MainCard() {
                                       {...provided.dragHandleProps}
                                       ref={provided.innerRef}
                                     >
-                                      <Link
-                                        style={{
-                                          color: "inherit",
-                                          textDecoration: "none",
-                                        }}
-                                        to={`/description/${task.id}`} key={task.id}
-                                      >
-                                       <p>
-                                        {task.title}
-                                    
-                                       </p>
-                              
-                                      </Link>
+                                     
+                                        <div key={task.id} className={style.card}>
+                                      <Card title={task.title}/> 
+                                          {/* <p>{task.title}</p> */}
+
+                                        </div>
                                       <div>
                                       <MdDelete onClick={() => dispatch(deleteCard({listId:list.id,cardId:task.id}))} 
                                         className={style.delete_button}

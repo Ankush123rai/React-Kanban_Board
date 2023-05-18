@@ -2,8 +2,10 @@ import{ useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import style from './card.module.css';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Description from '../../components/description/Description';
+import { useSelector } from 'react-redux';
+
 
 const Card=({ title })=>{
   const navigate = useNavigate();
@@ -11,7 +13,9 @@ const Card=({ title })=>{
 
   const handleNavigate = (card) => {
     navigate(`/task/${card.id}-${card.title}`, { state: { task: card.title } });
+  
   };
+      
 
   const handleOpen = () => {
     setOpen(true);
@@ -24,12 +28,14 @@ const Card=({ title })=>{
   const handleCardClick = () => {
     handleNavigate(title);
     handleOpen();
+    window.tag=title
+    window.t=title
   };
 
   return (
     <>
       <div className={style.cards}>
-        <Link onClick={handleCardClick}>
+        <Link onClick={handleCardClick} to={`description/:${title}`}>
           <p>{title}</p>
         </Link>
       </div>
@@ -40,14 +46,8 @@ const Card=({ title })=>{
         aria-describedby="modal-modal-description"
       >
         <Box className={style.dailogBox}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {title} Task
-
-
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          
+         <Description var card={title}/>
         </Box>
       </Modal>
     </>
