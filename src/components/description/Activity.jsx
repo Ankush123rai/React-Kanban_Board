@@ -33,14 +33,17 @@ function Activity() {
     handleSubmit();
   }
 };
+const [time ,setTime]=useState(showTime)
 const date = new Date();
 
-    const showTime = date.getHours() 
+    const showTime =  date.toLocaleString('default', { month: 'long' })
+              +" "+ date.getDate()
+               +" at "+     date.getHours() 
         + ':' + date.getMinutes() 
-        +" "+ date.getDate()
-        +" "+ date.toLocaleString('default', { month: 'long' })
        
-         const [time ,setTime]=useState(showTime)
+        
+       
+        
 
   return (
     <div className="main-container-wrap">
@@ -54,6 +57,8 @@ const date = new Date();
             onChange={handleEditorValueChange}
             className="compose-form-textarea"
             placeholder="  Write a comment "
+            style={{display:'flex'  ,backgroundColor:'white',borderRadius:'.5rem',
+               width:'100vw'}}
           />
         </div>
         
@@ -65,8 +70,9 @@ const date = new Date();
             <Typography variant="h6" component="h2"
             style={{display:'flex' ,gap:'1rem' ,margin:'.5rem'}}> 
            <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
-           kamal panwar  -  added at {curElm.time}</Typography> 
-           <Typography style={{display:'flex' ,marginLeft:"4rem"}}> {curElm.task}
+           kamal panwar -  {curElm.time}</Typography> 
+           <Typography style={{display:'flex' ,marginLeft:"4rem" ,backgroundColor:'white',borderRadius:'.5rem',
+                padding:".5rem"}}> {curElm.task}
            </Typography>
            
           </div>

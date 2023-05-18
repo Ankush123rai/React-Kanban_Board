@@ -12,9 +12,8 @@ function MainCard() {
   const dispatch = useDispatch();
   const reduxData = useSelector((state) => state.lists.lists);
 
-  
  
-      console.log(reduxData)
+      console.log(reduxData.filter(task=>task.task.listId))
 
   
   return (
