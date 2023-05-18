@@ -21,17 +21,14 @@ const Card=({ title })=>{
     setOpen(false);
   };
 
-  const handleCardClick = () => {
-    handleNavigate(title);
-    handleOpen();
-  };
+
 
   return (
     <>
       <div className={style.cards}>
-        <Link onClick={handleCardClick}>
+       
           <p>{title}</p>
-        </Link>
+        
       </div>
       <Modal
         open={open}

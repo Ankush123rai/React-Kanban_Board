@@ -8,10 +8,13 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
+     <BrowserRouter>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
           <App />
       </PersistGate>
+    </Provider> 
+    </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
