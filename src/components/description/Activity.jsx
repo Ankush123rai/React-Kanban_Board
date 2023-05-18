@@ -13,7 +13,11 @@ function Activity() {
   var k=[]
   k=storedData ? JSON.parse(storedData) : []
   console.log ();
-  var [activity, setActivity] = useState(k);
+
+  let newArray=k.filter(function (el){
+    return el.cardName  ==  window.tag
+  })
+  var [activity, setActivity] = useState(newArray);
   const handleEditorValueChange = (e) => {
     setEditorValue(e.target.value);
   };
@@ -34,7 +38,7 @@ function Activity() {
  
   };
  
-  console.log(k);
+
 
   const handleKeypress = (e) => {
     if (e.keyCode === 13) {
