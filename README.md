@@ -7,17 +7,24 @@ The Kanban board is used to track work items as they move through each stage of 
 
 Kanban boards are often used in agile software development, but they can be used in any team or project that involves workflow management. They are particularly useful for teams that want to visualize their work, identify bottlenecks, and continuously improve their processes.
 
+
 Features=>
 Create and manage tasks using a drag-and-drop interface
+
 View tasks in a Kanban-style board with columns for "To Do", "In Progress", and "Done"
+
 Edit and delete tasks as needed
+
 Assign tasks to team members
+
 View detailed information about each task, including its due date, priority, and description
 
 
-{
+
+
+
+
   "boards": [
-  
   
     {
       "id": "board1",
@@ -109,14 +116,17 @@ View detailed information about each task, including its due date, priority, and
       }
     }
   ]
-}
+
 
 
 Libraries =>
 
 State management : Redux
+
 Drag and drop : react-beautiful-dnd
+
 UI Library : Material UI
+
 Deployment : Deployment will be done on open platforms like render.com
 
 
