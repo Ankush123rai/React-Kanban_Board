@@ -29,7 +29,7 @@ function Activity() {
       ...activity
     ]);
    var tag= { id: uuid(), task: editorValue, time: showTime, cardName:name }
-    setEditorValue(editorValue);
+    setEditorValue("");
     setTime(time);
    const users = getUsers();
     users.push(tag);
