@@ -123,6 +123,9 @@ Deployment : Deployment will be done on open platforms like render.com
 collaborators =>
 
 Ankush Rai - https://github.com/Ankush123rai
+
 Dilip Lovevanshi - https://github.com/dilip884400
+
 Kamal Panwar - https://github.com/KamalPanwar
+
 Nharti Zhade - 
