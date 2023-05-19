@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.home_container{
+    background-color:black;
+    overflow:scroll;
+}
+.home_body{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+.wallpaper{
+    position:fixed;
+    bottom: 23rem;
+    left:2rem
+}
