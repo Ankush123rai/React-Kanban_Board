@@ -3,6 +3,7 @@ import style from "./Navbar.module.css";
 import { BiSearchAlt2 } from "react-icons/Bi";
 import { IoIosNotifications } from "react-icons/Io";
 import { GrCircleInformation } from "react-icons/Gr";
+import { useState } from "react";
 
 const Navbar = () => {
   return (
@@ -12,17 +13,18 @@ const Navbar = () => {
           className={style.navbarImg}
           src="https://public-files.gumroad.com/f7o3inoeloo0cxh572go242z2q4v"
         />
-        <h2 className={style.navbarItem}>KanBan</h2>
+        <h2 className={style.logo}>KanBan</h2>
         <h3 className={style.navbarItem}>WorkSpaces</h3>
         <h3 className={style.navbarItem}>Recent</h3>
         <h3 className={style.navbarItem}>Stared</h3>
         <h3 className={style.navbarItem}>Tamplets</h3>
-        <button className={style.navbarBtn}>Create</button>
       </div>
 
       <div className={style.navbarRight}>
         
-          <input className={style.navbarSearch} type="text" placeholder="Search" />
+          <input 
+            className={style.navbarSearch} type="text"
+            placeholder="Search" />
       
         <BiSearchAlt2 className={style.Icon} />
         <IoIosNotifications className={style.Icon} />
