@@ -4,7 +4,7 @@ import style from './card.module.css';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Description from '../../components/description/Description';
-import { useSelector } from 'react-redux';
+
 
 
 const Card=({ title })=>{

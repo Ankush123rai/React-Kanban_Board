@@ -56,7 +56,7 @@ function MainCard() {
 
   const handleEditList=(id)=>{
    
-    const newTitle=Swal.fire({
+   Swal.fire({
       title: 'Enter new title',
       input: 'text',
       inputAttributes: {

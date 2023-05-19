@@ -15,7 +15,7 @@ function Activity() {
   console.log ();
 
   let newArray=k.filter(function (el){
-    return el.cardName  ==  window.tag
+    return el.cardName  ===  window.tag
   })
   var [activity, setActivity] = useState(newArray);
   const handleEditorValueChange = (e) => {
@@ -29,7 +29,7 @@ function Activity() {
       ...activity
     ]);
    var tag= { id: uuid(), task: editorValue, time: showTime, cardName:name }
-    setEditorValue(editorValue);
+    setEditorValue("");
     setTime(time);
    const users = getUsers();
     users.push(tag);

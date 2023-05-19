@@ -67,7 +67,7 @@ const InputCard = ({type,listId}) => {
       }
         <button 
           type="submit">
-          {type=="card" ?"Add Card": 'Add List'}
+          {type==="card" ?"Add Card": 'Add List'}
         </button>
       </div>
       </form>
