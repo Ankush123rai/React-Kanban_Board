@@ -1,21 +1,20 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux";
-import {v4 as uuid} from "uuid"
+import Swal from "sweetalert2";
 import {
   deleteList,
   reorderLists,
   reorderCards,
   moveCardAcrossLists,
   editList,
-  addCard,
   deleteCard,
 } from "../features/listSlice";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import style from "./MainCard.module.css";
 import InputCard from "../inputCard/InputCard";
 import Card from "../../atoms/card/card";
-import { Link } from "react-router-dom";
-import { MdDelete, MdEdit } from "react-icons/md";
+
+import { MdDelete } from "react-icons/md";
 
 function MainCard() {
   const dispatch = useDispatch();
@@ -56,10 +55,24 @@ function MainCard() {
   };
 
   const handleEditList=(id)=>{
-    const newTitle=prompt("Enter new title");
-    if(newTitle !== ""){
-      dispatch(editList({id,title:newTitle}))
-    }
+   
+    const newTitle=Swal.fire({
+      title: 'Enter new title',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Edit',
+      showLoaderOnConfirm: true,
+      preConfirm: (title) => {
+        if(title !== ""){
+          dispatch(editList({id,title}))
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    })
+
   }
 
   return (

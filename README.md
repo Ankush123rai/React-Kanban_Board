@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+#KANBAN BOARD
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Description=> A Kanban board is a visual project management tool that helps teams visualize and track their work. It is typically made up of a physical or digital board that is divided into columns, each of which represents a stage in the team's workflow. The columns are usually labeled with categories like "To Do", "In Progress", and "Done".
 
-## Available Scripts
+The Kanban board is used to track work items as they move through each stage of the workflow. Each work item is represented by a card that is placed on the board, and team members can move the cards from one column to another as they work on them. This helps the team to see at a glance which tasks are in progress, which tasks are waiting, and which tasks have been completed.
 
-In the project directory, you can run:
+Kanban boards are often used in agile software development, but they can be used in any team or project that involves workflow management. They are particularly useful for teams that want to visualize their work, identify bottlenecks, and continuously improve their processes.
 
-### `npm start`
+##Features=> Create and manage tasks using a drag-and-drop interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+View tasks in a Kanban-style board with columns for "To Do", "In Progress", and "Done"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Edit and delete tasks as needed
 
-### `npm test`
+Assign tasks to team members
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+View detailed information about each task, including its due date, priority, and description
 
-### `npm run build`
+##Data Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+"boards": [
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+{
+  "id": "board1",
+  "title": "Computer Science",
+  "columns": [
+    {
+      "id": "column1",
+      "title": "To Do",
+      "tasks": [
+        {
+          "id": "task1",
+          "title": "Write Code for Project",
+          "description": "Implement the functionality for the task page",
+          "dueDate": "2023-05-12",
+          "priority": "High",
+         
+          "tags": ["task", "Frontend"]
+        },
+        {
+          "id": "task2",
+          "title": "Fix Bug in Code",
+          "description": "Fix the bug in the decription functionality",
+          "dueDate": "2023-05-12",
+          "priority": "Medium",
+          
+          "tags": ["description", "Backend"]
+        }
+      ]
+    },
+    {
+      "id": "column2",
+      "title": "In Progress",
+      "tasks": [
+        {
+          "id": "task3",
+          "title": "Design UI for Profile Page",
+          "description": "Create a new UI for the profile page",
+          "dueDate": "2023-05-12",
+          "priority": "Low",
+       
+          "tags": ["Profile", "UI"]
+        }
+      ]
+    },
+    {
+      "id": "column3",
+      "title": "Done",
+      "tasks": [
+        {
+          "id": "task4",
+          "title": "Write Documentation for Project",
+          "description": "Write the documentation for the entire project",
+          "dueDate": "2023-05-30",
+          "priority": "High",
+         
+          "tags": ["Documentation", "All"]
+        }
+      ]
+    }
+  ],
+  "customization": {
+    "color": "#F7D358",
+    "tags": ["Computer Science", "Programming"]
+  }
+},
+{
+  "id": "board2",
+  "title": "History",
+  "columns": [
+    {
+      "id": "column1",
+      "title": "To Do",
+      "tasks": []
+    },
+    {
+      "id": "column2",
+      "title": "In Progress",
+      "tasks": []
+    },
+    {
+      "id": "column3",
+      "title": "Done",
+      "tasks": []
+    }
+  ],
+  "customization": {
+    "color": "#FA8072",
+    "tags": ["History", "Research"]
+  }
+}
+]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##Libraries =>
 
-### `npm run eject`
+State management : Redux
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Drag and drop : react-beautiful-dnd
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+UI Library : Material UI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Deployment : Deployment will be done on open platforms like render.com
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##collaborators =>
 
-## Learn More
+Ankush Rai - https://github.com/Ankush123rai
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Dilip Lovevanshi - https://github.com/dilip884400
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Kamal Panwar - https://github.com/KamalPanwar
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Nharti Zhade -

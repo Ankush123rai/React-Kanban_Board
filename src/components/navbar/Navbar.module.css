@@ -3,7 +3,6 @@
     position:fixed; 
     background-color: black;
     top: 0; 
-    padding: 1rem;
     width: 100%;   
     z-index: 9999;
     display: flex;
@@ -72,4 +71,15 @@ background-color: rgb(215, 230, 255);
 }
 .navbarBtn:hover{
     background-color: rgb(215, 230, 255);
+}
+
+@media screen and (max-width: 768px){
+    .navbarItem{
+        display: none;
+    }
+    
+    .navbarRight{
+        display: none;
+    }
+    
 }

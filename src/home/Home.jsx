@@ -10,7 +10,7 @@ import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import EditIcon from '@mui/icons-material/Edit';
 
 const Home = () => {
-  const imageUrl="https://img.freepik.com/free-vector/modern-stylish-hexagonal-background-wallpaper_78370-720.jpg"
+  const imageUrl="https://static.vecteezy.com/system/resources/thumbnails/008/023/852/small/abstract-colorful-geometric-shape-background-modern-color-background-for-your-website-vector.jpg"
 
   const images=localStorage.getItem('image')
   const imageRef=useRef(null)

@@ -1,5 +1,4 @@
 
-
 .inputForm{
     display: flex;
     flex-direction: column;
@@ -72,6 +71,16 @@
     margin: .5rem 1rem;
 }
 
+.initial_div{
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    padding: .5rem;
+    border-bottom-left-radius:.5rem;
+    border-bottom-right-radius:.5rem;
+    margin-bottom: 2rem;
+}
+
 .initial_btn{
     border:none;
     padding: .6rem 1.5rem;
@@ -80,4 +89,3 @@
     text-align: left;
 
 }
-

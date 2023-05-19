@@ -10,7 +10,7 @@ const Navbar = () => {
           className={style.navbarImg}
           src="https://public-files.gumroad.com/f7o3inoeloo0cxh572go242z2q4v"
         />
-        <h2 className={style.navbarItem}>KanBan</h2>
+        <h2 className={style.logo}>KanBan</h2>
         <h3 className={style.navbarItem}>WorkSpaces</h3>
         <h3 className={style.navbarItem}>Recent</h3>
         <h3 className={style.navbarItem}>Stared</h3>
