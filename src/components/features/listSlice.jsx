@@ -81,6 +81,7 @@ const listSlice = createSlice({
         destList.task.splice(destIndex, 0, card);
       }
     },
+    
   },
 });
 
@@ -94,6 +95,7 @@ export const {
   deleteCard,
   editCard,
   editList,
+  edittask,
 } = listSlice.actions;
 
 export default listSlice.reducer;

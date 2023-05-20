@@ -6,18 +6,25 @@ import { v4 as uuid } from "uuid";
 
 export default function DescriptionText() {
 
+
+  const storedData = localStorage.getItem("des");
+  var dscr=[]
+  dscr=storedData ? JSON.parse(storedData) : []
+  
+  
+
   const [title, setTitle] = useState("");
   const [editing, setEditing] = useState(true); 
    
   
   function handleSubmit(){
     setEditing(false)
-    var tag= { id: uuid(), cardName:window.tag }
-    var des = []
+    var tag= { id: uuid(), cardName:window.tag ,discription:title }
+    var des = 
     des=getdes()
     des.push(tag);
     localStorage.setItem("des", JSON.stringify(des));
-    console.log(des)
+    
    }
    
 

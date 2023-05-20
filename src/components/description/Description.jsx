@@ -13,6 +13,8 @@ import DescriptionText from './DescriptionText';
 import { IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { editCard } from '../features/listSlice';
 
 
 
@@ -21,11 +23,22 @@ import { Link } from 'react-router-dom';
 export default function Description(){
   const [title, setTitle] = useState(window.t);
   const [editing, setEditing] = useState(false);
+  const dispatch=useDispatch()
     
-  
- 
+  const reduxData = useSelector((state) => state.lists.lists);
+
   
 
+  const handleTitle=()=>{
+    const id=window.id
+    const lid=window.lid
+    console.log(lid,id)
+    dispatch(editCard({ listId:lid, cardId:id,title:title}))
+    setEditing(false)
+ 
+  }     
+
+  console.log()
   return(<>
       <Box
       sx={{
@@ -54,8 +67,8 @@ export default function Description(){
               size='xtraSmall '
               type="text"
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              onBlur={() => setEditing(false)}
+              onChange={(e) => ( setTitle(e.target.value))}
+              onBlur={() => handleTitle()}
               autoFocus/>
               
             ) : (

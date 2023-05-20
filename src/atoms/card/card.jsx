@@ -7,13 +7,13 @@ import Description from '../../components/description/Description';
 import { useSelector } from 'react-redux';
 
 
-const Card=({ title })=>{
+const Card=({ title },{listid})=>{
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-
+    
   const handleNavigate = (card) => {
-    navigate(`/task/${card.id}-${card.title}`, { state: { task: card.title } });
-  
+    navigate(`/task/${card.id}-${card.title}`, { state: { task: card.title } ,});
+          
   };
       
 
@@ -30,13 +30,15 @@ const Card=({ title })=>{
     handleOpen();
     window.tag=title
     window.t=title
+    
+  
   };
-
+  
   return (
     <>
-      <div className={style.cards}>
-        <Link onClick={handleCardClick} to={`description/:${title}`}>
-          <p>{title}</p>
+      <div >
+        <Link onClick={handleCardClick} style={{border:'none'}} to={`description/:${title}`}>
+          <p style={{border:'none'}}>{title}</p>
         </Link>
       </div>
       <Modal
@@ -47,7 +49,7 @@ const Card=({ title })=>{
       >
         <Box className={style.dailogBox}>
           
-         <Description var card={title}/>
+         <Description />
         </Box>
       </Modal>
     </>

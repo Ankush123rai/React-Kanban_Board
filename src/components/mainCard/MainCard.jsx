@@ -9,18 +9,18 @@ import {
   editList,
   addCard,
   deleteCard,
+  edittask,
 } from "../features/listSlice";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import style from "./MainCard.module.css";
 import InputCard from "../inputCard/InputCard";
 import Card from "../../atoms/card/card";
-import { Link } from "react-router-dom";
 import { MdDelete, MdEdit } from "react-icons/md";
 
 function MainCard() {
   const dispatch = useDispatch();
   const reduxData = useSelector((state) => state.lists.lists);
-  console.log(reduxData);
+ 
 
   const handleDragEnd = (result) => {
     if (!result.destination) return;
@@ -60,6 +60,11 @@ function MainCard() {
     if(newTitle !== ""){
       dispatch(editList({id,title:newTitle}))
     }
+  }
+  const editTask=(lid,id)=>{
+    window.lid=lid
+   window.id=id
+   
   }
 
   return (
@@ -114,8 +119,8 @@ function MainCard() {
                                       ref={provided.innerRef}
                                     >
                                    
-                                      <div key={task.id} className={style.card}>
-                                    <Card title={task.title}/> 
+                                      <div key={task.id} onClick={()=>editTask(list.id,task.id)}>
+                                    <Card title={task.title} /> 
                                         {/* <p>{task.title}</p> */}
 
                                       </div>
