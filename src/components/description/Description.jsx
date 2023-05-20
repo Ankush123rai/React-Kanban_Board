@@ -22,9 +22,6 @@ export default function Description(){
   const [title, setTitle] = useState(window.t);
   const [editing, setEditing] = useState(false);
     
-  
- 
-  
 
   return(<>
       <Box

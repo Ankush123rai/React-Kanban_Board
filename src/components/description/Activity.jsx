@@ -8,6 +8,12 @@ import { getUsers } from "./localStorage";
 
 function Activity() {
   const [editorValue, setEditorValue] = useState("");
+
+
+const userData=JSON.parse(localStorage.getItem('user'))
+
+
+
   
   const storedData = localStorage.getItem("users");
   var k=[]
@@ -63,7 +69,7 @@ function Activity() {
     <div className="main-container-wrap">
       <form className="compose-form" onSubmit={handleSubmit}>
         <div style={{ display: "flex", gap: ".5rem" }}>
-          <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
+          <Avatar sx={{ bgcolor: deepOrange[500] }}>{userData.firstName[0]}{userData.lastName[0]}</Avatar>
           <TextField
             size="small"
             value={editorValue}
@@ -92,8 +98,9 @@ function Activity() {
               component="h2"
               style={{ display: "flex", gap: "1rem", margin: ".5rem" }}
             >
-              <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
-              kamal panwar - {curElm.time}
+              <Avatar sx={{ bgcolor: deepOrange[500] }}>{userData.firstName[0]}{userData.lastName[0]}</Avatar>
+              
+              {userData.firstName}{userData.lastName}- {curElm.time}
             </Typography>
             <Typography
               style={{
