@@ -19,7 +19,7 @@ import { MdDelete } from "react-icons/md";
 function MainCard() {
   const dispatch = useDispatch();
   const reduxData = useSelector((state) => state.lists.lists);
-  console.log(reduxData);
+  // console.log(reduxData);
 
   const handleDragEnd = (result) => {
     if (!result.destination) return;

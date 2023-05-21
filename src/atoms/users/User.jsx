@@ -34,7 +34,7 @@ const User = () => {
     setTimeout(() => {
       navigate('/')
     }, 1000);
-      }
+      }    
   else{
   return (
     <div className={style.container}>
