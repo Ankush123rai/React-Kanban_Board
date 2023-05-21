@@ -19,7 +19,7 @@
         function MainCard() {
           const dispatch = useDispatch();
           const reduxData = useSelector((state) => state.lists.lists);
-          
+          console.log(reduxData);
 
           const handleDragEnd = (result) => {
             if (!result.destination) return;

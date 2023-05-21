@@ -42,7 +42,7 @@ const InputCard = ({type,listId}) => {
     <div className={style.container}>
      <div style={{display:toggle?"none":""}} onClick={handleToggle} className={style.initial_div}>
       <button onClick={openForm} className={style.initial_btn}>
-        + Add {type ? "a card" : "another list"}
+        + Add {type ? "a card" : "list"}
       </button>
       </div>
 

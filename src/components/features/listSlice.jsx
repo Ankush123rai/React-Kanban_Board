@@ -8,6 +8,8 @@ const listSlice = createSlice({
     lists: [],
   },
   reducers: {
+
+
     addList: (state, action) => {
       const { title } = action.payload;
       state.lists.push({ id: uuid(), title });

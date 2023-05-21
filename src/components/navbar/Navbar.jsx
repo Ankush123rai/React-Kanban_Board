@@ -6,6 +6,12 @@ const Navbar = () => {
 
   const userData=JSON.parse(localStorage.getItem('user'))
 
+  const clearStorageData = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
+
   return (
     <div className={style.navbar}>
       <div className={style.navbarLeft}>    
@@ -18,6 +24,12 @@ const Navbar = () => {
           alt="user"
         />
         {userData? <h3 className={style.user}>{userData.firstName}{" "}{userData.lastName}</h3>:''}
+        <button
+          className={style.logout}
+          onClick={clearStorageData}
+        >
+          logout
+        </button>
       </div>
     </div>
   );

@@ -1,0 +1,67 @@
+/* Activity.module.css */
+
+.main_container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  
+  .compose_form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .compose_form_textarea {
+    flex: 1;
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+  
+  .tweet_container {
+    margin-left: -0.4rem;
+    height: 230px;
+    overflow: scroll;
+  }
+  .tweet_container::-webkit-scrollbar{
+    width: 0.5rem;
+  }
+    .tweet_container::-webkit-scrollbar-thumb{
+        background-color: #eee;
+    }
+  
+  .tweet {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tweet-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .tweet-avatar {
+    background-color: #ff5722;
+  }
+  
+  .tweet-username {
+    font-weight: 500;
+  }
+  
+  .tweet-time {
+    color: #777;
+  }
+  
+  .tweet-message {
+    display: flex;
+    margin-left: 4rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+  

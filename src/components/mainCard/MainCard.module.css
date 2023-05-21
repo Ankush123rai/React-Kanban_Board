@@ -5,7 +5,8 @@
     padding-top: 8rem;
     padding-left:2rem ;
     overflow: scroll;
-    width: 90%;
+    width: 99%;
+    
 }
 .container::-webkit-scrollbar{
     display: none;
