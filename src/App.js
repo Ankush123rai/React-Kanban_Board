@@ -7,8 +7,13 @@ import PrivateRoute from "./PrivateRoute";
 
 
 const App = () => {
+
+     
+
+
+
   return (
-    
+    <div style={{  backgroundImage: `url(${window.image})`}}>
       <Routes>
         {/* <Route path="/" element={<Home />} />
         <Route path="/description/:id/" element={<Description/>} /> */}
@@ -19,7 +24,7 @@ const App = () => {
           <Route exact path="/description/:id/" element={<Description/>} />
         </Route>
       </Routes>
-   
+    </div>
   );
 };
 

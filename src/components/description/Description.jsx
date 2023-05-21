@@ -8,11 +8,15 @@ import ListIcon from '@mui/icons-material/List';
 import Typography from '@mui/material/Typography';
 import styles from './Description.module.css'
 import Activity from './Activity';
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import DescriptionText from './DescriptionText';
 import { IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { editCard } from '../features/listSlice';
+import { getdes } from './storage';
+import { v4 as uuid } from "uuid";
 
 
 
@@ -21,9 +25,21 @@ import { Link } from 'react-router-dom';
 export default function Description(){
   const [title, setTitle] = useState(window.t);
   const [editing, setEditing] = useState(false);
+  const dispatch=useDispatch()
     
 
-  return(<>
+
+  const handleTitle=()=>{
+    const id=window.id
+    const lid=window.lid
+    
+    dispatch(editCard({ listId:lid, cardId:id,title:title}))
+    setEditing(false)
+ 
+  }     
+
+ 
+  return(<><div style={{backgroundImage:`url(${window.image})`}}>
       <Box
       sx={{
         display: 'flex',
@@ -31,10 +47,10 @@ export default function Description(){
         '& > :not(style)': {
           m: 6,
           width:550,
-          
-          backgroundColor:"#D9DDDC",
+          height:550,   
           marginLeft:"24rem",
-          borderRadius:'1rem'
+          borderRadius:'1rem' ,
+          overflowY:'scroll'
         },
       }}
     >  
@@ -51,8 +67,8 @@ export default function Description(){
               size='xtraSmall '
               type="text"
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              onBlur={() => setEditing(false)}
+              onChange={(e) => ( setTitle(e.target.value))}
+              onBlur={() => handleTitle()}
               autoFocus/>
               
             ) : (
@@ -79,7 +95,7 @@ export default function Description(){
          </div>
        </Paper>
     </Box>
-
+    </div>  
 
     </>
   )

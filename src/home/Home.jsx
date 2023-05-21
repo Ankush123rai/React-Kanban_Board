@@ -32,7 +32,8 @@ const Home = () => {
       reader.readAsDataURL(file);
     }
   };
-
+    
+   window.image=selectedImage
 
   return (
     <div className={style.home_container}>
