@@ -123,6 +123,8 @@ UI Library : Material UI
 
 Deployment : Deployment will be done on open platforms like render.com
 
+Deployment-Link : https://kanban-ikee.onrender.com/
+
 ##collaborators =>
 
 Ankush Rai - https://github.com/Ankush123rai
@@ -131,4 +133,4 @@ Dilip Lovevanshi - https://github.com/dilip884400
 
 Kamal Panwar - https://github.com/KamalPanwar
 
-Nharti Zhade -
+Bharti Zade -https://github.com/202619363827
