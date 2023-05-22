@@ -31,9 +31,7 @@ const User = () => {
     localStorage.setItem('user', JSON.stringify(newUser))
   }
   if(isActive){
-    setTimeout(() => {
       navigate('/')
-    }, 1000);
       }
   else{
   return (
