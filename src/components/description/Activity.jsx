@@ -4,10 +4,17 @@ import { deepOrange } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 import { TextField } from "@mui/material";
 import { v4 as uuid } from "uuid";
+import style from "./Activity.module.css";
 import { getUsers } from "./localStorage";
 
 function Activity() {
   const [editorValue, setEditorValue] = useState("");
+
+
+const userData=JSON.parse(localStorage.getItem('user'))
+
+
+
   
   const storedData = localStorage.getItem("users");
   var k=[]
@@ -60,10 +67,10 @@ function Activity() {
   const [time, setTime] = useState(showTime);
 
   return (
-    <div className="main-container-wrap">
+    <div className={style.main_container}>
       <form className="compose-form" onSubmit={handleSubmit}>
         <div style={{ display: "flex", gap: ".5rem" }}>
-          <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
+          <Avatar sx={{ bgcolor: deepOrange[500] }}>{userData.firstName[0]}{userData.lastName[0]}</Avatar>
           <TextField
             size="small"
             value={editorValue}
@@ -82,18 +89,19 @@ function Activity() {
       </form>
 
       <div
-        className="tweet-container"
+        className={style.tweet_container}
         style={{ marginLeft: "-.4rem", marginTop: "1rem" }}
       >
         {activity.map((curElm, index) => (
-          <div key={index} className="tweet">
+          <div key={index} className={style.tweet}>
             <Typography
               variant="h6"
               component="h2"
-              style={{ display: "flex", gap: "1rem", margin: ".5rem" }}
+              style={{ display: "flex", gap: "1rem", margin: ".2rem" }}
             >
-              <Avatar sx={{ bgcolor: deepOrange[500] }}>KP</Avatar>
-              kamal panwar - {curElm.time}
+              <Avatar sx={{ bgcolor: deepOrange[500] }}>{userData.firstName[0]}{userData.lastName[0]}</Avatar>
+              
+              {userData.firstName}{userData.lastName}- {curElm.time}
             </Typography>
             <Typography
               style={{
@@ -101,7 +109,7 @@ function Activity() {
                 marginLeft: "4rem",
                 backgroundColor: "white",
                 borderRadius: ".5rem",
-                padding: ".5rem"
+                padding: ".2rem"
               }}
             >
               {" "}

@@ -8,13 +8,15 @@ import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import EditIcon from '@mui/icons-material/Edit';
+import image from './image.jpg'
 
 const Home = () => {
-  const imageUrl="https://static.vecteezy.com/system/resources/thumbnails/008/023/852/small/abstract-colorful-geometric-shape-background-modern-color-background-for-your-website-vector.jpg"
+  const imageUrl=image
 
   const images=localStorage.getItem('image')
   const imageRef=useRef(null)
   
+                                                                                                                                                                                                                                                                                                                                                                                                      
   const [selectedImage, setSelectedImage] = useState(images?images:imageUrl);
   const handleImageUpload = (e) => {
     const [file] = e.target.files;
@@ -30,11 +32,13 @@ const Home = () => {
       reader.readAsDataURL(file);
     }
   };
-
+    
+   window.image=selectedImage
 
   return (
     <div className={style.home_container}>
        <div className={style.home_body}>
+       <Navbar/>
           <div>
             {selectedImage && (
               <div className={style.home_body}
@@ -42,7 +46,6 @@ const Home = () => {
                   backgroundImage: `url(${selectedImage})`,
                 }}
               >
-              <Navbar/>
               <MainCard/>
               </div>
             )}

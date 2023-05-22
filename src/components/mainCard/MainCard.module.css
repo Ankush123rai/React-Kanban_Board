@@ -5,7 +5,8 @@
     padding-top: 8rem;
     padding-left:2rem ;
     overflow: scroll;
-    width: 90%;
+    width: 99%;
+    
 }
 .container::-webkit-scrollbar{
     display: none;
@@ -83,7 +84,7 @@
     box-sizing: border-box;
     background-color: #eee;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    min-width: 200px;
+    min-width: 250px;
 }
 .delete_button{
     font-size: 1.4rem;

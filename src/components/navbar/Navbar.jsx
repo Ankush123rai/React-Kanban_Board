@@ -3,29 +3,33 @@ import style from "./Navbar.module.css";
 
 
 const Navbar = () => {
+
+  const userData=JSON.parse(localStorage.getItem('user'))
+
+  const clearStorageData = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
+
   return (
     <div className={style.navbar}>
-      <div className={style.navbarLeft}>
-        
+      <div className={style.navbarLeft}>    
         <h2 className={style.logo}>KanBan</h2>
-        <h3 className={style.navbarItem}>WorkSpaces</h3>
-        <h3 className={style.navbarItem}>Recent</h3>
-        <h3 className={style.navbarItem}>Stared</h3>
-        <h3 className={style.navbarItem}>Tamplets</h3>
-        <button className={style.navbarBtn}>Create</button>
       </div>
-
       <div className={style.navbarRight}>
-        
-          <input className={style.navbarSearch} type="text" placeholder="Search" />
-      
         <img
           className={style.userImage}
-          src="https://img.freepik.com/premium-psd/3d-cartoon-character-avatar-isolated-3d-rendering_235528-554.jpg?w=2000"
+          src="https://th.bing.com/th/id/OIP.0KXEfkEY75TAV-MuuvO_-wHaHa?w=195&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7"
           alt="user"
-          width="50px"
-          height="50px"
         />
+        {userData? <h3 className={style.user}>{userData.firstName}{" "}{userData.lastName}</h3>:''}
+        <button
+          className={style.logout}
+          onClick={clearStorageData}
+        >
+          logout
+        </button>
       </div>
     </div>
   );
