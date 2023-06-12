@@ -2,7 +2,7 @@
 .inputForm{
     display: flex;
     flex-direction: column;
-    background-color: #eee;
+    background:rgba(65, 63, 63, 0.5);
     padding-top: .5rem;
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
@@ -35,7 +35,7 @@
     /* width: 100%; */
     padding: 0 1rem;
     box-sizing: border-box;
-    background-color: #eee;
+    background: rgba(222, 221, 221, 0.5);;
     margin-bottom: 2rem;
 }
 
@@ -71,21 +71,26 @@
     margin: .5rem 1rem;
 }
 
-.initial_div{
+/* .initial_div{
     display: flex;
     flex-direction: column;
-    background-color: #eee;
+    background:rgba(65, 63, 63, 0.5);
     padding: .5rem;
     border-bottom-left-radius:.5rem;
     border-bottom-right-radius:.5rem;
     margin-bottom: 2rem;
-}
+} */
 
 .initial_btn{
     border:none;
-    padding: .6rem 1.5rem;
+    padding: .9rem 2rem;
     width: 100%;
     border-radius: .2rem;
     text-align: left;
+    background:rgba(65, 63, 63, 0.5);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
 
 }

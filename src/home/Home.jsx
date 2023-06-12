@@ -8,10 +8,10 @@ import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import EditIcon from '@mui/icons-material/Edit';
-import image from './image.jpg'
+
 
 const Home = () => {
-  const imageUrl=image
+  const imageUrl="https://img.freepik.com/premium-photo/wall-with-black-block-pattern-light-it_842113-3947.jpg"
 
   const images=localStorage.getItem('image')
   const imageRef=useRef(null)

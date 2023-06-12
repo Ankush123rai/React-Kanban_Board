@@ -5,11 +5,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem;
+  background:rgba(65, 63, 63, 0.5);
 }
-.navbar {
-  background-color: rgb(245, 218, 218);
-  background-color: rgba(234, 231, 231, 0.5);
-}
+
 .navbarLeft {
   display: flex;
   justify-content: space-between;
@@ -30,8 +28,13 @@
   color: #fff;
 }
 .logo {
-  font-size: 2.3rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: rgb(235, 235, 239);
+  background: linear-gradient(90deg, rgb(214, 214, 221) 0%, rgb(53, 53, 237) 35%, rgba(0,212,255,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 3rem;
 }
 .navbarRight {
   display: flex;
