@@ -9,11 +9,11 @@ export default function DescriptionText() {
   var k=[]
   k=storedData ? JSON.parse(storedData) : []
   console.log (k);
-    const dscr=k.reverse().find(e=>e.cardName==window.tag)
+    const dscr=k.reverse().find(e=>e.cardName===window.tag)
  
   
  
-   const [title, setTitle] = useState(dscr==undefined ? 'Enter Description':dscr.description);
+   const [title, setTitle] = useState(dscr===undefined ? 'Enter Description':dscr.description);
   const [editing, setEditing] = useState(false); 
    
    
