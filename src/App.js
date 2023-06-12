@@ -15,9 +15,7 @@ const App = () => {
   return (
     <div style={{  backgroundImage: `url(${window.image})`}}>
       <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/description/:id/" element={<Description/>} /> */}
-
+       
         <Route path="/user" element={<User/>} />
         <Route element={<PrivateRoute/>}>
           <Route  exact path="/" element={<Home />} />
